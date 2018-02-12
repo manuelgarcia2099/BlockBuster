@@ -25,7 +25,7 @@ class TestCases {
 		cliente.agregarAlquiler(alquiler1);
 		cliente.agregarAlquiler(alquiler2);
 		cliente.agregarAlquiler(alquiler3);
-		
+		//Usé el log4J en cuenta
 		cliente.cuenta();
 	}
 
