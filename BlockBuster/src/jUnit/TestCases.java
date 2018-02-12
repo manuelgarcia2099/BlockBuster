@@ -1,13 +1,20 @@
 package jUnit;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
+import refactoring.AlquilerRefactoring;
+import refactoring.ClienteRefactoring;
+import refactoring.PeliculaRefactoring;
 import rental.Alquiler;
 import rental.Cliente;
 import rental.Pelicula;
 
+
+/**
+ * 
+ * @author Manuel García
+ *
+ */
 class TestCases {
 
 	@Test
@@ -27,6 +34,27 @@ class TestCases {
 		cliente.agregarAlquiler(alquiler3);
 		//Usé el log4J en cuenta
 		cliente.cuenta();
+	}
+	
+	@Test
+	void testRefactoring() {
+		
+		
+		ClienteRefactoring clienteRefactorado = new ClienteRefactoring("Pedro Tenorio");
+		
+		PeliculaRefactoring goodWillHunting = new PeliculaRefactoring ("Good Will Hunting", 0);
+		PeliculaRefactoring vengadores = new PeliculaRefactoring ("Vengadores", 1);
+		PeliculaRefactoring pinocho = new PeliculaRefactoring("Pinocho", 2);
+		
+		AlquilerRefactoring alquiler1=new AlquilerRefactoring(pinocho, 3);
+		AlquilerRefactoring alquiler2 = new AlquilerRefactoring(vengadores, 10);
+		AlquilerRefactoring alquiler3 = new AlquilerRefactoring(goodWillHunting, 5);
+		
+		clienteRefactorado.agregarAlquiler(alquiler1);
+		clienteRefactorado.agregarAlquiler(alquiler2);
+		clienteRefactorado.agregarAlquiler(alquiler3);
+		//Usé el log4J en cuenta
+		clienteRefactorado.cuenta();
 	}
 
 
